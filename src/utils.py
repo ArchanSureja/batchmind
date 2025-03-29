@@ -15,7 +15,7 @@ def load_questions(file_path):
         return []
     
 
-def write_response(file_path,results,questions):
+def write_response(file_path,results,questions,):
     """ write response to the data/response.txt"""
     try:
         with open(file_path, 'w') as f:

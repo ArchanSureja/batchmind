@@ -55,7 +55,7 @@ async def process_question(client, question_data, relevant_chunks,chunks,rate_li
             await asyncio.to_thread(redis_client.expire,lock_key,30)
 
             async with rate_limiter:
-                logger.warning(f"Calling API for '{question_text[:30]}...' with chunk {chunk_index}.")
+                logger.info(f"Calling API for '{question_text[:30]}...' with chunk {chunk_index}.")
                 answer = await generate_answer(client,chunk,question_text)
                 logger.info(f"Response from API for '{question_text[:30]}...")
 
