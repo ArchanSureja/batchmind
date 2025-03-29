@@ -8,9 +8,10 @@ import serial as serial_main
 from main import main as async_main
 import datetime 
 import os 
-from logger import benchmark_logger
+from logger import setup_benchmark_logger
 import platform
 import psutil
+benchmark_logger = setup_benchmark_logger()
 def benchmark_serial():
     benchmark_logger.info(
     f"Processor Details:\n"

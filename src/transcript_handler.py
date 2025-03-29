@@ -1,4 +1,5 @@
 import nltk 
+nltk.download('punkt_tab',quiet=True)
 from logger import logger 
 def load_transcript(file_path):
     try:

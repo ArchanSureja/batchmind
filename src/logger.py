@@ -55,7 +55,8 @@ benchmark_result_file_path = os.path.join(os.getcwd(),"benchmarks", benchmark_re
 os.makedirs(os.path.dirname(benchmark_result_file_path), exist_ok=True)
 
 logger = setup_logger(log_level=log_level, log_file=log_file_path)
-benchmark_logger = setup_benchmark_logger(log_level=log_level, benchmark_result_file=benchmark_result_file_path)
+
+
 if __name__ == "__main__":
     logger.debug("This is a debug message.")
     logger.info("This is an info message.")

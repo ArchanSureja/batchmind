@@ -1,6 +1,7 @@
 import re
 import sys
 import requests
+import os
 from youtube_transcript_api import YouTubeTranscriptApi
 
 def extract_video_id(youtube_url):
@@ -18,9 +19,12 @@ def get_transcript(video_id):
         return f"Error fetching transcript: {e}"
 
 def save_transcript_to_file(transcript, filename="data/transcript.txt"):
-    """Save the transcript to a text file"""
+    """Save the transcript to a text file, creating the directory if necessary."""
+    os.makedirs(os.path.dirname(filename), exist_ok=True)  # Ensure directory exists
+
     with open(filename, "w", encoding="utf-8") as file:
         file.write(transcript)
+    
     print(f"Transcript saved to {filename}")
 
 if __name__ == "__main__":
